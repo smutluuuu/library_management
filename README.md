@@ -15,7 +15,7 @@
 
 ### 1. Projeyi Klonlayın
 ```bash
-git clone <https://github.com/smutluuuu/library_management.git>
+git clone https://github.com/smutluuuu/library_management.git
 cd library-management
 ```
 
