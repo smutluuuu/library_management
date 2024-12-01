@@ -8,7 +8,7 @@ Follow these steps to set up and run the project locally:
 ### 1. Clone the Repository
 Clone the repository to your local machine using the following command:
 ```bash
-git clone <repository-url>
+git clone https://github.com/smutluuuu/library_management.git
 ```
 
 ### 2. Navigate to the Project Directory
