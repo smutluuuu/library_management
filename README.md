@@ -1,57 +1,52 @@
 
 # Library Management System
 
----
+## Project Setup Instructions
 
-## Gereksinimler
+Follow these steps to set up and run the project locally:
 
-- **Node.js**: v16 veya üzeri
-- **npm**: v8 veya üzeri
-- **PostgreSQL**: v14 veya üzeri
-
----
-
-## Kurulum Adımları
-
-### 1. Projeyi Klonlayın
+### 1. Clone the Repository
+Clone the repository to your local machine using the following command:
 ```bash
-git clone https://github.com/smutluuuu/library_management.git
+git clone <repository-url>
+```
+
+### 2. Navigate to the Project Directory
+Change to the directory of the cloned repository:
+```bash
 cd library-management
 ```
 
-### 2. Gerekli Bağımlılıkları Yükleyin
+### 3. Install Dependencies
+Install all necessary dependencies for the project:
 ```bash
 npm install
 ```
 
-### 3. Veritabanını Oluşturun
-- PostgreSQL sunucunuzda `library_management` adında bir veritabanı oluşturun:
-  ```sql
-  CREATE DATABASE library_management;
-  ```
+### 4. Database Setup
 
-### 4. Veritabanı Şemasını İçeri Aktarın
-- Proje dizininde bulunan `database_schema.sql` dosyasını kullanarak veritabanı tablolarını oluşturun:
-  ```bash
-  psql -U postgres -d library_management -f database_schema.sql
-  ```
+1. Ensure that PostgreSQL is installed and running on your local machine.
+2. Create a PostgreSQL database named `library_management`:
+   ```sql
+   CREATE DATABASE library_management;
+   ```
 
-### 5. Ortam Değişkenlerini Ayarlayın
-- Projenin kök dizininde `.env` adında bir dosya oluşturun ve aşağıdaki içerikleri ekleyin:
-  ```env
-  DATABASE_URL=postgres://postgres:password@localhost:5432/library_management
-  PORT=3000
-  ```
+3. Run the provided `database_schema.sql` script to set up the necessary tables:
+   ```bash
+   psql -U postgres -d library_management -f database_schema.sql
+   ```
 
-### 6. Projeyi Çalıştırın
-- Uygulamayı çalıştırmak için aşağıdaki komutu kullanın:
-  ```bash
-  npm run dev
-  ```
+4. Create a `.env` file in the root directory and define the database connection string:
+   ```
+   DATABASE_URL=postgres://<username>:<password>@<host>:<port>/<database-name>
+   ```
+   Replace `<username>`, `<password>`, `<host>`, `<port>`, and `<database-name>` with your database credentials. For example:
+   ```
+   DATABASE_URL=postgres://postgres:password@localhost:5432/library_management
+   ```
 
-## Önemli Notlar
-
-- **PostgreSQL Kullanıcı Adı ve Şifresi**: `.env` dosyasındaki `DATABASE_URL` değişkenine uygun şekilde PostgreSQL kullanıcı adınızı ve şifrenizi girin.
-- **Port Değişikliği**: Varsayılan port `3000` olarak ayarlanmıştır. Farklı bir port kullanmak isterseniz `.env` dosyasındaki `PORT` değişkenini güncelleyebilirsiniz.
-
----
+### 5. Start the Application
+Run the following command to start the server:
+```bash
+npm run dev
+```
