@@ -16,7 +16,7 @@ export const getUsers = async (req: Request, res: Response): Promise<void> => {
       }
       const currentBooks = await BorrowedBook.findAll({
         where: { userId: id, returnDate: null },
-        include: { model: Book, as: "BookAlias", attributes: ["name"] }, // Alias eklendi
+        include: { model: Book, as: "BookAlias", attributes: ["name"] },
       });
       const pastBooks = await BorrowedBook.findAll({
         where: { userId: id, returnDate: { [Op.ne]: null } },

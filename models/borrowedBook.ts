@@ -10,7 +10,7 @@ export default class BorrowedBook extends Model {
   public userId!: number;
   public bookId!: number;
 
-  public BookAlias?: Book; // Burada alias ile ilişkili modeli tanıtıyoruz
+  public BookAlias?: Book;
 }
 
 export const initBorrowedBookModel = (sequelize: Sequelize) => {
