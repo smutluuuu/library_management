@@ -2,11 +2,10 @@ import { Sequelize } from "sequelize";
 import User, { initUserModel } from "./user";
 import Book, { initBookModel } from "./book";
 import BorrowedBook, { initBorrowedBookModel } from "./borrowedBook";
+import dotenv from "dotenv";
 
-const sequelize = new Sequelize("library_management", "postgres", "password", {
-  host: "localhost",
+const sequelize = new Sequelize(process.env.DATABASE_URL || "", {
   dialect: "postgres",
-  port: 5432,
   logging: false,
 });
 
